@@ -54,6 +54,8 @@ def mp_train_fn(
     master_port: int,
     gin_config_file: Optional[str],
 ) -> None:
+    # Spawned workers don't inherit the parent's logging config.
+    logging.basicConfig(stream=sys.stdout, level=logging.INFO, force=True)
     if gin_config_file is not None:
         # Hack as absl doesn't support flag parsing inside multiprocessing.
         logging.info(f"Rank {rank}: loading gin config from {gin_config_file}")

@@ -3,6 +3,17 @@ tmp/
 exps/
 ckpts/
 
+# Datasets, run outputs and checkpoints (repo root only; research/data/ is source)
+/data/
+/logs/
+/checkpoints/
+/results/
+/tensorboard/
+/mlperf_inference/
+*.pt
+*.pth
+*.ckpt
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
